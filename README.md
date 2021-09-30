@@ -1,1 +1,1 @@
-"# ultimate-mern-boilerplate" 
+# ultimate-mern-boilerplate

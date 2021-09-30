@@ -1,0 +1,77 @@
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+import Layout from "../core/Layout";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+
+const Signup = () => {
+  const [values, setValues] = useState({
+    name: "Peter",
+    email: "ahlgren1234@gmail.com",
+    password: "password",
+    buttonText: "Submit",
+  });
+
+  const { name, email, password, buttonText } = values;
+
+  const handleChange = (name) => (event) => {
+    //
+  };
+
+  const clickSubmit = (event) => {
+    //
+  };
+
+  const signupForm = () => (
+    <form>
+      <div className="form-group">
+        <label className="text-muted">Name</label>
+        <input
+          type="text"
+          value={name}
+          className="form-control"
+          onChange={handleChange("name")}
+        />
+      </div>
+
+      <div className="form-group">
+        <label className="text-muted">Email</label>
+        <input
+          type="email"
+          value={email}
+          className="form-control"
+          onChange={handleChange("email")}
+        />
+      </div>
+
+      <div className="form-group">
+        <label className="text-muted">Password</label>
+        <input
+          type="password"
+          value={password}
+          className="form-control"
+          onChange={handleChange("password")}
+        />
+      </div>
+
+      <div>
+        <button className="btn btn-primary" onClick={clickSubmit}>
+          {buttonText}
+        </button>
+      </div>
+    </form>
+  );
+
+  return (
+    <Layout>
+      <div className="col-md-6 offset-md-3">
+        <ToastContainer />
+        <h1 className="p-5 text-center">Signup</h1>
+        {signupForm()}
+      </div>
+    </Layout>
+  );
+};
+
+export default Signup;
